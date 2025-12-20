@@ -8,34 +8,34 @@ const HeroSection = () => {
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating shapes */}
-        <div className="absolute top-32 left-10 w-20 h-20 bg-accent/20 blob animate-float" />
-        <div className="absolute top-48 right-20 w-32 h-32 bg-sky/20 blob-alt animate-float-delayed" />
-        <div className="absolute bottom-40 left-1/4 w-24 h-24 bg-yellow/20 blob animate-float-slow" />
-        <div className="absolute bottom-20 right-1/3 w-16 h-16 bg-pink/20 blob animate-float" />
+        <div className="absolute top-32 left-10 w-20 h-20 bg-coral/10 blob animate-float" />
+        <div className="absolute top-48 right-20 w-32 h-32 bg-coral/5 blob-alt animate-float-delayed" />
+        <div className="absolute bottom-40 left-1/4 w-24 h-24 bg-cream-dark/30 blob animate-float-slow" />
+        <div className="absolute bottom-20 right-1/3 w-16 h-16 bg-coral/10 blob animate-float" />
         
         {/* Gradient orbs */}
-        <div className="absolute top-1/4 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-10 w-64 h-64 bg-coral/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-cream-dark/20 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Year badge */}
-          <div className="inline-flex items-center gap-2 bg-teal/30 backdrop-blur-sm px-4 py-2 rounded-full mb-8 animate-scale-in border border-teal-light/20">
-            <Lightbulb className="w-5 h-5 text-yellow" />
-            <span className="text-sm font-medium text-primary-foreground">Start-up Competition 2025</span>
+          <div className="inline-flex items-center gap-2 bg-coral/20 backdrop-blur-sm px-4 py-2 rounded-full mb-8 animate-scale-in border border-coral/30">
+            <Lightbulb className="w-5 h-5 text-coral" />
+            <span className="text-sm font-medium text-foreground">Start-up Competition 2025</span>
           </div>
 
           {/* Main heading */}
-          <h1 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-primary-foreground mb-6 animate-slide-up">
+          <h1 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-foreground mb-6 animate-slide-up">
             Turn Your Ideas Into
-            <span className="block mt-2 text-gradient bg-gradient-to-r from-yellow via-accent to-pink bg-clip-text text-transparent">
+            <span className="block mt-2 text-gradient bg-gradient-to-r from-coral via-coral-light to-coral bg-clip-text text-transparent">
               Tomorrow's Reality
             </span>
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8 leading-relaxed animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-8 leading-relaxed animate-slide-up" style={{ animationDelay: "0.1s" }}>
             IdeasJam is a start-up competition that nurtures aspiring entrepreneurs in business ideation and start-up development. Join us and bring your ideas to life!
           </p>
 
@@ -54,25 +54,25 @@ const HeroSection = () => {
           </div>
 
           {/* Open to badge */}
-          <div className="bg-teal/20 backdrop-blur-sm border border-teal-light/30 rounded-2xl p-6 max-w-xl mx-auto animate-slide-up" style={{ animationDelay: "0.3s" }}>
-            <p className="text-lg md:text-xl font-medium text-primary-foreground">
-              Open to all undergraduate students from <span className="text-accent font-semibold">universities in Singapore</span>
+          <div className="bg-coral/10 backdrop-blur-sm border border-coral/20 rounded-2xl p-6 max-w-xl mx-auto animate-slide-up" style={{ animationDelay: "0.3s" }}>
+            <p className="text-lg md:text-xl font-medium text-foreground">
+              Open to all undergraduate students from <span className="text-coral font-semibold">universities in Singapore</span>
             </p>
           </div>
 
           {/* Hero image */}
           <div className="mt-16 relative max-w-4xl mx-auto animate-slide-up" style={{ animationDelay: "0.4s" }}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-teal-light/20">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-cream-dark/30">
               <img 
                 src={heroImage} 
                 alt="Students brainstorming startup ideas in an innovation hub" 
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-teal-dark/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-cream-dark/40 to-transparent" />
             </div>
             {/* Decorative elements around image */}
-            <div className="absolute -top-4 -left-4 w-8 h-8 bg-accent rounded-full animate-pulse-soft" />
-            <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-yellow/30 rounded-full animate-pulse-soft" style={{ animationDelay: "1s" }} />
+            <div className="absolute -top-4 -left-4 w-8 h-8 bg-coral rounded-full animate-pulse-soft" />
+            <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-coral/30 rounded-full animate-pulse-soft" style={{ animationDelay: "1s" }} />
           </div>
         </div>
 
