@@ -37,27 +37,27 @@
     --radius: 1rem;
 
     /* Custom colors */
-    --coral: 15 85% 60%;
-    --coral-light: 15 85% 70%;
-    --teal: 180 70% 35%;
-    --teal-dark: 185 80% 25%;
-    --teal-light: 175 60% 45%;
+    --coral: 8 75% 55%;
+    --coral-light: 8 75% 65%;
+    --cream: 35 40% 92%;
+    --cream-dark: 35 30% 85%;
+    --cream-light: 35 50% 96%;
     --sky: 200 85% 60%;
     --purple: 260 70% 60%;
     --yellow: 45 95% 55%;
     --pink: 340 75% 60%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(185 80% 25%) 0%, hsl(200 70% 40%) 50%, hsl(180 70% 35%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(25 95% 55%) 0%, hsl(340 75% 60%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 50% 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(35 40% 92%) 0%, hsl(35 35% 88%) 50%, hsl(35 30% 85%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(8 75% 55%) 0%, hsl(8 70% 48%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(35 40% 96%) 100%);
     --gradient-blue: linear-gradient(135deg, hsl(220 90% 56%) 0%, hsl(260 70% 60%) 100%);
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(220 30% 15% / 0.1);
-    --shadow-glow: 0 8px 40px -8px hsl(220 90% 56% / 0.3);
-    --shadow-accent: 0 8px 30px -8px hsl(25 95% 55% / 0.4);
-    --shadow-card: 0 10px 40px -10px hsl(220 30% 15% / 0.12);
+    --shadow-soft: 0 4px 20px -4px hsl(30 20% 30% / 0.1);
+    --shadow-glow: 0 8px 40px -8px hsl(8 75% 55% / 0.3);
+    --shadow-accent: 0 8px 30px -8px hsl(8 75% 55% / 0.4);
+    --shadow-card: 0 10px 40px -10px hsl(30 20% 30% / 0.12);
   }
 
   .dark {
