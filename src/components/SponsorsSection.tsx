@@ -14,10 +14,10 @@ const SponsorsSection = () => {
           </h2>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-xl mx-auto">
           {/* Gold Sponsors */}
-          <div className="mb-12">
-            <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="mb-8">
+            <div className="flex items-center justify-center gap-4 mb-4">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent to-yellow/30" />
               <span className="px-4 py-1 bg-yellow/10 text-yellow font-semibold text-sm rounded-full">
                 GOLD
@@ -25,8 +25,8 @@ const SponsorsSection = () => {
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-yellow/30" />
             </div>
             <div className="flex justify-center">
-              <div className="bg-card rounded-2xl p-8 shadow-card border border-yellow/20 hover:shadow-glow transition-all duration-300">
-                <div className="text-2xl font-display font-bold text-card-foreground">
+              <div className="bg-card rounded-xl p-6 shadow-card border border-yellow/20 hover:shadow-glow transition-all duration-300">
+                <div className="text-xl font-display font-bold text-card-foreground">
                   Red Alpha
                 </div>
               </div>
@@ -35,16 +35,16 @@ const SponsorsSection = () => {
 
           {/* Bronze Sponsors */}
           <div>
-            <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="flex items-center justify-center gap-4 mb-4">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent to-amber-600/30" />
               <span className="px-4 py-1 bg-amber-600/10 text-amber-600 font-semibold text-sm rounded-full">
                 BRONZE
               </span>
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-600/30" />
             </div>
-            <div className="flex flex-wrap justify-center gap-6">
-              <div className="bg-card rounded-xl p-6 shadow-sm border border-border/50 hover:shadow-card transition-all duration-300">
-                <div className="text-lg font-display font-semibold text-card-foreground">
+            <div className="flex justify-center">
+              <div className="bg-card rounded-xl p-4 shadow-sm border border-border/50 hover:shadow-card transition-all duration-300">
+                <div className="text-base font-display font-semibold text-card-foreground">
                   Garage@EEE
                 </div>
               </div>

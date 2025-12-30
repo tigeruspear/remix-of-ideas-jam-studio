@@ -56,10 +56,17 @@ export default {
           dark: "hsl(var(--cream-dark))",
           light: "hsl(var(--cream-light))",
         },
-        sky: "hsl(var(--sky))",
+        sky: {
+          DEFAULT: "hsl(var(--sky))",
+          light: "hsl(var(--sky-light))",
+        },
         purple: "hsl(var(--purple))",
         yellow: "hsl(var(--yellow))",
         pink: "hsl(var(--pink))",
+        teal: {
+          DEFAULT: "hsl(var(--teal))",
+          light: "hsl(var(--teal-light))",
+        },
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'sans-serif'],
