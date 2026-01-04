@@ -5,15 +5,108 @@ import heroImage from "@/assets/hero-image.jpg";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-hero-gradient overflow-hidden pt-20">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Floating shapes */}
-        <div className="absolute top-32 left-10 w-16 h-16 bg-sky-light rounded-full animate-float opacity-60" />
-        <div className="absolute top-48 right-20 w-24 h-24 bg-coral/20 rounded-full animate-float-delayed" />
-        <div className="absolute bottom-40 left-1/4 w-20 h-20 bg-yellow/20 rounded-full animate-float-slow" />
-        <div className="absolute bottom-20 right-1/3 w-12 h-12 bg-pink/20 rounded-full animate-float" />
-        <div className="absolute top-1/3 right-1/4 w-8 h-8 bg-teal-light rounded-full animate-float-delayed" />
-      </div>
+      {/* Topographic lines background */}
+      <svg
+        className="absolute inset-0 w-full h-full"
+        viewBox="0 0 1440 900"
+        fill="none"
+        preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Left side contour lines */}
+        <path
+          d="M-50 200 Q50 180 80 300 Q100 450 60 600 Q30 750 -30 850"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          fill="none"
+          opacity="0.4"
+        />
+        <path
+          d="M-20 150 Q100 130 140 280 Q170 450 120 620 Q80 780 20 900"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          fill="none"
+          opacity="0.35"
+        />
+        <path
+          d="M30 100 Q160 80 200 250 Q240 440 180 630 Q130 800 80 950"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          fill="none"
+          opacity="0.3"
+        />
+        
+        {/* Top right contour lines */}
+        <path
+          d="M900 -50 Q950 50 1100 80 Q1250 100 1400 60 Q1500 30 1550 -20"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          fill="none"
+          opacity="0.35"
+        />
+        <path
+          d="M850 -20 Q920 100 1080 140 Q1240 170 1420 120 Q1520 80 1600 40"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          fill="none"
+          opacity="0.3"
+        />
+        <path
+          d="M800 30 Q880 160 1050 200 Q1220 240 1440 180 Q1550 140 1650 100"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          fill="none"
+          opacity="0.25"
+        />
+        
+        {/* Right side flowing lines */}
+        <path
+          d="M1500 300 Q1400 320 1350 400 Q1300 500 1350 620 Q1400 740 1500 850"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          fill="none"
+          opacity="0.4"
+        />
+        <path
+          d="M1550 250 Q1420 280 1380 380 Q1330 500 1390 640 Q1450 780 1550 900"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          fill="none"
+          opacity="0.35"
+        />
+        
+        {/* Bottom decorative lines */}
+        <path
+          d="M200 850 Q400 820 600 860 Q800 900 1000 870 Q1200 840 1400 880"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          fill="none"
+          opacity="0.25"
+        />
+        <path
+          d="M100 900 Q350 860 600 910 Q850 960 1100 920 Q1350 880 1500 930"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          fill="none"
+          opacity="0.2"
+        />
+
+        {/* Additional organic curves */}
+        <path
+          d="M-30 400 Q100 380 150 450 Q200 550 150 650 Q80 720 -20 750"
+          stroke="hsl(var(--accent))"
+          strokeWidth="1.5"
+          fill="none"
+          opacity="0.25"
+        />
+        <path
+          d="M1300 150 Q1380 200 1420 300 Q1450 400 1400 480"
+          stroke="hsl(var(--accent))"
+          strokeWidth="1.5"
+          fill="none"
+          opacity="0.3"
+        />
+      </svg>
 
       <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -87,10 +180,6 @@ const HeroSection = () => {
                 className="w-full h-auto object-cover"
               />
             </div>
-            {/* Decorative elements around image */}
-            <div className="absolute -top-4 -left-4 w-8 h-8 bg-coral rounded-full animate-pulse-soft" />
-            <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-sky-light rounded-full animate-pulse-soft" style={{ animationDelay: "1s" }} />
-            <div className="absolute top-1/2 -right-6 w-6 h-6 bg-yellow rounded-full animate-float" />
           </div>
         </div>
       </div>
