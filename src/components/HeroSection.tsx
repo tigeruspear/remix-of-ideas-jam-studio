@@ -15,96 +15,108 @@ const HeroSection = () => {
       >
         {/* Left side contour lines */}
         <path
+          className="topo-line topo-line-1"
+          style={{ '--line-opacity': 0.4 } as React.CSSProperties}
           d="M-50 200 Q50 180 80 300 Q100 450 60 600 Q30 750 -30 850"
           stroke="hsl(var(--accent))"
           strokeWidth="2"
           fill="none"
-          opacity="0.4"
         />
         <path
+          className="topo-line topo-line-2"
+          style={{ '--line-opacity': 0.35 } as React.CSSProperties}
           d="M-20 150 Q100 130 140 280 Q170 450 120 620 Q80 780 20 900"
           stroke="hsl(var(--accent))"
           strokeWidth="2"
           fill="none"
-          opacity="0.35"
         />
         <path
+          className="topo-line topo-line-3"
+          style={{ '--line-opacity': 0.3 } as React.CSSProperties}
           d="M30 100 Q160 80 200 250 Q240 440 180 630 Q130 800 80 950"
           stroke="hsl(var(--accent))"
           strokeWidth="2"
           fill="none"
-          opacity="0.3"
         />
         
         {/* Top right contour lines */}
         <path
+          className="topo-line topo-line-4"
+          style={{ '--line-opacity': 0.35 } as React.CSSProperties}
           d="M900 -50 Q950 50 1100 80 Q1250 100 1400 60 Q1500 30 1550 -20"
           stroke="hsl(var(--accent))"
           strokeWidth="2"
           fill="none"
-          opacity="0.35"
         />
         <path
+          className="topo-line topo-line-5"
+          style={{ '--line-opacity': 0.3 } as React.CSSProperties}
           d="M850 -20 Q920 100 1080 140 Q1240 170 1420 120 Q1520 80 1600 40"
           stroke="hsl(var(--accent))"
           strokeWidth="2"
           fill="none"
-          opacity="0.3"
         />
         <path
+          className="topo-line topo-line-6"
+          style={{ '--line-opacity': 0.25 } as React.CSSProperties}
           d="M800 30 Q880 160 1050 200 Q1220 240 1440 180 Q1550 140 1650 100"
           stroke="hsl(var(--accent))"
           strokeWidth="2"
           fill="none"
-          opacity="0.25"
         />
         
         {/* Right side flowing lines */}
         <path
+          className="topo-line topo-line-7"
+          style={{ '--line-opacity': 0.4 } as React.CSSProperties}
           d="M1500 300 Q1400 320 1350 400 Q1300 500 1350 620 Q1400 740 1500 850"
           stroke="hsl(var(--accent))"
           strokeWidth="2"
           fill="none"
-          opacity="0.4"
         />
         <path
+          className="topo-line topo-line-8"
+          style={{ '--line-opacity': 0.35 } as React.CSSProperties}
           d="M1550 250 Q1420 280 1380 380 Q1330 500 1390 640 Q1450 780 1550 900"
           stroke="hsl(var(--accent))"
           strokeWidth="2"
           fill="none"
-          opacity="0.35"
         />
         
         {/* Bottom decorative lines */}
         <path
+          className="topo-line topo-line-9"
+          style={{ '--line-opacity': 0.25 } as React.CSSProperties}
           d="M200 850 Q400 820 600 860 Q800 900 1000 870 Q1200 840 1400 880"
           stroke="hsl(var(--accent))"
           strokeWidth="2"
           fill="none"
-          opacity="0.25"
         />
         <path
+          className="topo-line topo-line-10"
+          style={{ '--line-opacity': 0.2 } as React.CSSProperties}
           d="M100 900 Q350 860 600 910 Q850 960 1100 920 Q1350 880 1500 930"
           stroke="hsl(var(--accent))"
           strokeWidth="2"
           fill="none"
-          opacity="0.2"
         />
 
         {/* Additional organic curves */}
         <path
+          className="topo-line topo-line-11"
+          style={{ '--line-opacity': 0.25 } as React.CSSProperties}
           d="M-30 400 Q100 380 150 450 Q200 550 150 650 Q80 720 -20 750"
           stroke="hsl(var(--accent))"
           strokeWidth="1.5"
           fill="none"
-          opacity="0.25"
         />
         <path
+          className="topo-line topo-line-12"
+          style={{ '--line-opacity': 0.3 } as React.CSSProperties}
           d="M1300 150 Q1380 200 1420 300 Q1450 400 1400 480"
           stroke="hsl(var(--accent))"
           strokeWidth="1.5"
           fill="none"
-          opacity="0.3"
         />
       </svg>
 
