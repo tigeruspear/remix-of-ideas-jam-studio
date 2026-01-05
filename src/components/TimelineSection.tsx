@@ -16,7 +16,7 @@ const timelineEvents = [
     highlight: false,
   },
   {
-    date: "8 March 2026",
+    date: "10 March 2026",
     title: "Preliminary Submission",
     description: "Submit your initial business proposal",
     side: "right",
