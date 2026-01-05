@@ -126,7 +126,7 @@ const HeroSection = () => {
           <div className="text-left">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 animate-scale-in border border-accent/30">
-              <span className="text-sm font-medium text-accent uppercase tracking-wider">IdeasJam</span>
+              <span className="text-sm font-medium text-accent uppercase tracking-wider">IdeasJam 2026</span>
             </div>
 
             {/* Main heading */}
