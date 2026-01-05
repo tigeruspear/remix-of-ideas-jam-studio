@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import IdeasJamLogo from "@/assets/Ideasjamlogo.svg";
+
 
 const navItems = [
   { label: "Home", href: "#" },
@@ -17,9 +19,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="#" className="flex items-center gap-2">
-            <span className="font-display font-bold text-xl md:text-2xl text-foreground">
-              Ideas<span className="text-accent">Jam</span> 2026
-            </span>
+            <img src={IdeasJamLogo} className="h-16 md:h-20 w-auto" alt="Ideas Jam Logo" />
+
           </a>
 
           {/* Desktop Navigation */}

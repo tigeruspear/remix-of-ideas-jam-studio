@@ -1,26 +1,34 @@
-import { Building2, Heart, Shield } from "lucide-react";
+import { School, Heart, PiggyBank , HousePlug, Palette } from "lucide-react";
 
 const themes = [
   {
-    icon: Building2,
-    title: "Smart Infrastructure",
-    description: "Innovative solutions for sustainable urban development and intelligent systems",
-    bgColor: "bg-sky-light",
-    iconColor: "text-primary",
+    icon: School,
+    title: "Education",
+    description: "Develop inclusive and accessible education solutions to empower individuals and bridge opportunity gaps.",
+    bgColor: "bg-coral-light/10",
+    iconColor: "text-coral",
   },
   {
     icon: Heart,
     title: "Healthcare",
-    description: "Transforming medical care through technology and innovative approaches",
-    bgColor: "bg-pink/20",
-    iconColor: "text-pink",
+    description: "Innovate tailored and preventative healthcare approaches to improve quality of life and health outcomes for all.",
+    bgColor: "bg-coral-light/10",
+    iconColor: "text-coral",
   },
   {
-    icon: Shield,
-    title: "Security",
-    description: "Next-generation solutions for cybersecurity and safety",
-    bgColor: "bg-teal-light",
-    iconColor: "text-teal",
+    icon: PiggyBank,
+    title: "Finance",
+    description: "Revolutionize financial services to promote inclusivity, literacy, and long-term economic stability.",
+    bgColor: "bg-coral-light/10",
+    iconColor: "text-coral",
+  },
+
+    {
+    icon: HousePlug,
+    title: "Energy",
+    description: "Create sustainable and scalable energy solutions to reduce environmental harm and drive decarbonization",
+    bgColor: "bg-coral-light/10",
+    iconColor: "text-coral",
   },
 ];
 
@@ -29,15 +37,19 @@ const ThemesSection = () => {
     <section id="themes" className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-coral/10 text-coral text-sm font-semibold rounded-full mb-4">
+              <Palette className="w-4 h-4" />
+              Competition Themes
+          </span>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-3">
-            Innovate for Tomorrow
+            Invent the Future:
           </h2>
-          <p className="text-muted-foreground">
-            Building a Resilient Future
+          <p className="font-display font-base text-3xl md:text-4xltext-muted-foreground">
+            Shaping a Better World
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {themes.map((theme) => (
             <div
               key={theme.title}
