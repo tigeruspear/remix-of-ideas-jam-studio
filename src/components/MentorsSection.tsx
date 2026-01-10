@@ -9,6 +9,9 @@ const mentors = [
     initials: "AK",
     bgColor: "bg-coral/20",
     email: "aditya.kumar@se.com",
+    image: "/src/assets/mr aditya kumar.png",
+    imagePosition: "center top",
+    imageZoom: 1.0,
   },
   {
     name: "Ms. Clara Kwan",
@@ -17,6 +20,9 @@ const mentors = [
     initials: "CK",
     bgColor: "bg-yellow/20",
     email: "ckyl@mail.com",
+    image: "/src/assets/ms clara kwan.png",
+    imagePosition: "center top",
+    imageZoom: 1.1,
   },
   {
     name: "Mr. Jason Lee Ho Fan",
@@ -25,6 +31,9 @@ const mentors = [
     initials: "JL",
     bgColor: "bg-teal-light",
     email: "jason.lee@scentbysix.com",
+    image: "/src/assets/Mr Jason Lee Ho Fan.png",
+    imagePosition: "center top",
+    imageZoom: 1.1,
   },
   {
     name: "Mr. Lionel Chok",
@@ -33,6 +42,9 @@ const mentors = [
     initials: "LC",
     bgColor: "bg-sky-light",
     email: "lionel@immersively.co",
+    image: "/src/assets/mr lional chok.png",
+    imagePosition: "center top",
+    imageZoom: 1.0,
   },
   {
     name: "Ms. Maggie Yeo Sock Koon",
@@ -41,6 +53,9 @@ const mentors = [
     initials: "MY",
     bgColor: "bg-purple/20",
     email: "maggie.yeo@gmail.com",
+    image: "/src/assets/Ms Maggie Yeo sock koon.png",
+    imagePosition: "center top",
+    imageZoom: 1.0,
   },
   {
     name: "Mr. Nicola Scarpelli",
@@ -49,6 +64,9 @@ const mentors = [
     initials: "NS",
     bgColor: "bg-pink/20",
     email: "scarpelli.na@gmail.com",
+    image: "/src/assets/Mr nicola scarpelli.png",
+    imagePosition: "center bottom",
+    imageZoom: 1.4,
   },
   {
     name: "Mr. Pranav Krishna",
@@ -57,6 +75,9 @@ const mentors = [
     initials: "PK",
     bgColor: "bg-coral/20",
     email: "pranav05@live.com",
+    image: "/src/assets/Mr pranav Krishna.png",
+    imagePosition: "center top",
+    imageZoom: 1.6,
   },
   {
     name: "Mr. Vineet Agarwal",
@@ -65,6 +86,9 @@ const mentors = [
     initials: "VA",
     bgColor: "bg-sky-light",
     email: "vineet101@gmail.com",
+    image: "/src/assets/Mr Vineet Agarwal.png",
+    imagePosition: "center top",
+    imageZoom: 1.1,
   },
 ];
 
@@ -106,10 +130,16 @@ const MentorsSection = () => {
               className="group bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 border border-border/50 cursor-pointer flex flex-col items-center justify-center min-h-[200px]"
             >
               {/* Avatar */}
-              <div className={`w-16 h-16 rounded-full ${mentor.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                <span className="font-display font-bold text-lg text-foreground">
-                  {mentor.initials}
-                </span>
+              <div className="w-20 h-20 rounded-full overflow-hidden mb-4 group-hover:scale-110 transition-transform duration-300">
+                <img
+                  src={mentor.image}
+                  alt={mentor.name}
+                  className="w-full h-full object-cover"
+                  style={{ 
+                    objectPosition: mentor.imagePosition,
+                    transform: `scale(${mentor.imageZoom || 1})`
+                  }}
+                />
               </div>
               
               <h3 className="font-display font-bold text-base text-card-foreground text-center mb-1">
@@ -151,11 +181,17 @@ const MentorsSection = () => {
 
             <div className="bg-background rounded-xl overflow-hidden">
                 {/* Header Background */}
-                <div className={`h-32 ${selectedMentor.bgColor} w-full flex items-end justify-center pb-6`}>
-                     <div className="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center transform translate-y-12">
-                        <span className="font-display font-bold text-3xl text-foreground">
-                            {selectedMentor.initials}
-                        </span>
+                <div className={`h-40 ${selectedMentor.bgColor} w-full flex items-end justify-center pb-6`}>
+                     <div className="w-32 h-32 rounded-full bg-white shadow-lg overflow-hidden transform translate-y-12">
+                        <img
+                          src={selectedMentor.image}
+                          alt={selectedMentor.name}
+                          className="w-full h-full object-cover"
+                          style={{ 
+                            objectPosition: selectedMentor.imagePosition,
+                            transform: `scale(${selectedMentor.imageZoom || 1})`
+                          }}
+                        />
                      </div>
                 </div>
 
