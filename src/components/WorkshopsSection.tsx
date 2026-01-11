@@ -63,10 +63,13 @@ const WorkshopsSection = () => {
               <Calendar className="w-4 h-4 text-orange-500" />
               <span className="text-sm font-semibold text-gray-700">15 February 2026</span>
             </div>
-            <div className="flex items-center gap-2 bg-white px-5 py-2 rounded-xl shadow-sm border border-white">
+            <button
+              onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=NTU+LT1A', '_blank')}
+              className="flex items-center gap-2 bg-white px-5 py-2 rounded-xl shadow-sm border border-white hover:bg-orange-50 hover:border-orange-200 transition-colors cursor-pointer"
+            >
               <MapPin className="w-4 h-4 text-orange-600" />
-              <span className="text-sm font-semibold text-gray-700">NTU LT1A</span>
-            </div>
+              <span className="text-sm font-semibold text-gray-700 hover:text-orange-700">NTU LT1A</span>
+            </button>
           </div>
         </div>
 

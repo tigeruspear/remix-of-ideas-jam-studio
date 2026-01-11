@@ -142,6 +142,17 @@ const HeroSection = () => {
               IdeasJam is a start-up competition that nurtures aspiring entrepreneurs in business ideation and start-up development. Join us and bring your ideas to life!
             </p>
 
+            {/* Eligibility Highlight */}
+            <div className="bg-gradient-to-r from-accent/20 to-coral/20 backdrop-blur-sm border border-accent/30 rounded-2xl p-6 mb-8 animate-slide-up cursor-pointer group transition-all duration-300 hover:bg-accent/30 hover:border-accent/50 h-20 flex items-center" style={{ animationDelay: "0.15s" }}>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse group-hover:animate-bounce flex-shrink-0"></div>
+                <span className="text-sm font-semibold text-accent uppercase tracking-wider group-hover:hidden transition-opacity duration-300">Open to All</span>
+                <span className="text-sm font-medium text-foreground hidden group-hover:block transition-opacity duration-300 leading-relaxed overflow-hidden text-ellipsis whitespace-nowrap">
+                  We are open to all undergraduate students from universities in Singapore.
+                </span>
+              </div>
+            </div>
+
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-slide-up" style={{ animationDelay: "0.2s" }}>
               <Button variant="hero" size="xl" asChild>

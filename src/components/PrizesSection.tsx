@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 const prizes = [
   {
     position: "1st",
-    amount: 3000,
+    amount: 2500,
     icon: Trophy,
     bgColor: "bg-yellow/20",
     borderColor: "border-yellow/40",
@@ -24,8 +24,8 @@ const prizes = [
     borderColor: "border-amber-600/40",
   },
   {
-    position: "Special",
-    amount: 1000,
+    position: "Special Awards",
+    amount: 1500,
     icon: Star,
     bgColor: "bg-sky-light",
     borderColor: "border-primary/40",
