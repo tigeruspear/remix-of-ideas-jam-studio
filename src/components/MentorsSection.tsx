@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Users, X, Linkedin, Mail } from "lucide-react";
 
 const mentors = [
@@ -95,6 +95,33 @@ const mentors = [
 const MentorsSection = () => {
   const [selectedMentor, setSelectedMentor] = useState(null);
   const [showContact, setShowContact] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const gridRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const target = gridRef.current;
+    if (!target) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasAnimated(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
+
+  const getCardStyle = (index: number): CSSProperties =>
+    ({
+      "--mentor-delay": `${index * 90}ms`,
+    } as CSSProperties);
 
   const handleOpenPopup = (mentor) => {
     setSelectedMentor(mentor);
@@ -122,12 +149,45 @@ const MentorsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {mentors.map((mentor) => (
+        <style>{`
+          .mentor-card {
+            opacity: 0;
+          }
+
+          .mentor-card.is-visible {
+            animation: mentor-slide-in 700ms ease forwards;
+            animation-delay: var(--mentor-delay, 0ms);
+          }
+
+          @keyframes mentor-slide-in {
+            from {
+              opacity: 0;
+              transform: translateX(var(--mentor-offset, 0));
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @media (min-width: 1024px) {
+            .mentor-card {
+              --mentor-offset: -40px;
+            }
+
+            .mentor-card:nth-child(n + 5) {
+              --mentor-offset: 40px;
+            }
+          }
+        `}</style>
+
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {mentors.map((mentor, index) => (
             <div
               key={mentor.name}
               onClick={() => handleOpenPopup(mentor)}
-              className="group bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 border border-border/50 cursor-pointer flex flex-col items-center justify-center min-h-[200px]"
+              style={getCardStyle(index)}
+              className={`mentor-card group bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 border border-border/50 cursor-pointer flex flex-col items-center justify-center min-h-[200px] ${hasAnimated ? "is-visible" : ""}`}
             >
               {/* Avatar */}
               <div className="w-20 h-20 rounded-full overflow-hidden mb-4 group-hover:scale-110 transition-transform duration-300">

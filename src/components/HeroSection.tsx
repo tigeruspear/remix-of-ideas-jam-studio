@@ -206,6 +206,21 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Wave divider into About section */}
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none">
+        <svg
+          className="w-full h-10 md:h-24"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 40 C 240 120 480 0 720 60 C 960 120 1200 20 1440 80 V 120 H 0 Z"
+            fill="hsl(var(--background))"
+          />
+        </svg>
+      </div>
     </section>
   );
 };
