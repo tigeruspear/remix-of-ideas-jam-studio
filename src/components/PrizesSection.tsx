@@ -81,8 +81,8 @@ const PrizesSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-yellow/20 text-yellow text-sm font-semibold rounded-full mb-4 border border-yellow/30">
+        <div className="mb-12 flex flex-col items-center text-center">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-yellow/10 text-coral text-sm font-semibold rounded-full mb-4 border border-yellow/30">
             <Sparkles className="w-4 h-4" />
             Grab these prizes!
           </span>
@@ -91,9 +91,6 @@ const PrizesSection = () => {
               $7,000
             </p>
           </div>
-          <p className="text-lg text-foreground/70 mt-4 max-w-md mx-auto">
-            Sponsored by our <span className="text-yellow font-semibold">GOLD</span> sponsor, Red Alpha
-          </p>
         </div>
 
         {/* Prize cards */}

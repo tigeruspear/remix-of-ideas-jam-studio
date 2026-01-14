@@ -68,9 +68,7 @@ const Index = () => {
       <RevealOnScroll>
         <WorkshopsSection />
       </RevealOnScroll>
-      <RevealOnScroll>
-        <SponsorsSection />
-      </RevealOnScroll>
+ 
       <RevealOnScroll>
         <CTASection />
       </RevealOnScroll>
