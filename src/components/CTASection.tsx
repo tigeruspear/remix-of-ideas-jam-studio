@@ -150,7 +150,7 @@ const CTASection = () => {
           </h2>
 
           <p className="text-lg text-cream/80 mb-10 leading-relaxed">
-            Join IdeasJam 2025 and take the first step towards building your
+            Join IdeasJam 2026 and take the first step towards building your
             entrepreneurial future. Register now and be part of Singapore&apos;s
             most exciting start-up competition!
           </p>
