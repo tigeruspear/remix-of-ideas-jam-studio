@@ -45,7 +45,7 @@ const SponsorsSection = () => {
             <div className="flex justify-center">
               <div className="bg-card rounded-xl p-2 shadow-sm border border-border/50 hover:shadow-card transition-all duration-300">
                 <img
-                  src="/src/assets/Sponsors/InnovatorsHub.png"
+                  src="/assets/Sponsors/InnovatorsHub.png"
                   alt="Innovators Hub"
                   className="h-20 w-auto"
                 />
