@@ -171,38 +171,36 @@
   .animate-scale-in {
     animation: scale-in 0.5s ease-out forwards;
   }
-  .topo-line {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: draw-line 3s ease-out forwards, pulse-line 4s ease-in-out infinite 3s;
+
+  .hero-pattern-reveal {
+    opacity: 0;
+    clip-path: circle(0% at 50% 50%);
+    animation: hero-pattern-reveal 1s ease-out forwards;
   }
 
-  .topo-line-1 { animation-delay: 0s, 3s; }
-  .topo-line-2 { animation-delay: 0.2s, 3.2s; }
-  .topo-line-3 { animation-delay: 0.4s, 3.4s; }
-  .topo-line-4 { animation-delay: 0.6s, 3.6s; }
-  .topo-line-5 { animation-delay: 0.8s, 3.8s; }
-  .topo-line-6 { animation-delay: 1s, 4s; }
-  .topo-line-7 { animation-delay: 1.2s, 4.2s; }
-  .topo-line-8 { animation-delay: 1.4s, 4.4s; }
-  .topo-line-9 { animation-delay: 1.6s, 4.6s; }
-  .topo-line-10 { animation-delay: 1.8s, 4.8s; }
-  .topo-line-11 { animation-delay: 2s, 5s; }
-  .topo-line-12 { animation-delay: 2.2s, 5.2s; }
-}
-
-@keyframes draw-line {
-  to {
-    stroke-dashoffset: 0;
+  .hero-pattern-hotspot {
+    opacity: 0;
+    animation: hero-pattern-hotspot 0.8s ease-out 0.2s forwards;
   }
 }
 
-@keyframes pulse-line {
-  0%, 100% {
-    opacity: var(--line-opacity, 0.3);
+@keyframes hero-pattern-reveal {
+  0% {
+    opacity: 0;
+    clip-path: circle(0% at 50% 50%);
   }
-  50% {
-    opacity: calc(var(--line-opacity, 0.3) + 0.15);
+  100% {
+    opacity: 0.1;
+    clip-path: circle(75% at 50% 50%);
+  }
+}
+
+@keyframes hero-pattern-hotspot {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.35;
   }
 }
 

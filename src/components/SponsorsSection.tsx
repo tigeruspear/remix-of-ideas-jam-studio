@@ -43,10 +43,12 @@ const SponsorsSection = () => {
               <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-600/30" />
             </div>
             <div className="flex justify-center">
-              <div className="bg-card rounded-xl p-4 shadow-sm border border-border/50 hover:shadow-card transition-all duration-300">
-                <div className="text-base font-display font-semibold text-card-foreground">
-                  Garage@EEE
-                </div>
+              <div className="bg-card rounded-xl p-2 shadow-sm border border-border/50 hover:shadow-card transition-all duration-300">
+                <img
+                  src="/src/assets/Sponsors/InnovatorsHub.png"
+                  alt="Innovators Hub"
+                  className="h-20 w-auto"
+                />
               </div>
             </div>
           </div>

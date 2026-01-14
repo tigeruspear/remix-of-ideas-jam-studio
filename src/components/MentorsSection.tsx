@@ -215,7 +215,7 @@ const MentorsSection = () => {
 
         <div className="text-center mt-10">
           <p className="text-muted-foreground">
-            Click on a mentor to view their full profile
+            and many more industry experts joining us as mentors...
           </p>
         </div>
       </div>
