@@ -10,6 +10,7 @@ import WorkshopsSection from "@/components/WorkshopsSection";
 import SponsorsSection from "@/components/SponsorsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import VideoSection from "@/components/video";
 
 const Index = () => {
   const RevealOnScroll = ({ children }: { children: React.ReactNode }) => {
@@ -72,6 +73,7 @@ const Index = () => {
       <RevealOnScroll>
         <CTASection />
       </RevealOnScroll>
+      <VideoSection />
       <Footer />
     </main>
   );
