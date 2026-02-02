@@ -106,16 +106,11 @@ const HeroSection = () => {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-slide-up" style={{ animationDelay: "0.85s" }}>
               <Button variant="hero" size="xl" asChild>
-                <a href="https://tinyurl.com/IdeasJam2025SignUp" target="_blank" rel="noopener noreferrer">
+                <a href="https://tinyurl.com/JoinIdeasjam2026" target="_blank" rel="noopener noreferrer">
                   Register Now <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </Button>
-              <a 
-                href="#" 
-                className="text-accent font-medium hover:underline flex items-center gap-2 px-4 py-3"
-              >
-                Participant Deck →
-              </a>
+         
             </div>
 
             {/* Social links */}
@@ -129,7 +124,7 @@ const HeroSection = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://t.me/ideasjam2025"
+                href="https://t.me/ideasjam2026"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center text-foreground/70 hover:bg-accent hover:text-accent-foreground transition-colors"

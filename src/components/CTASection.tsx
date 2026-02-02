@@ -162,7 +162,7 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button variant="hero" size="xl" asChild>
               <a
-                href="https://tinyurl.com/IdeasJam2025SignUp"
+                href="https://tinyurl.com/JoinIdeasjam2026"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -170,15 +170,7 @@ const CTASection = () => {
               </a>
             </Button>
 
-            <Button variant="heroOutline" size="xl" asChild>
-              <a
-                href="http://tinyurl.com/IdeasJam2025ParticipantDeck"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Participant Deck
-              </a>
-            </Button>
+ 
           </div>
 
           {/* Social links */}
@@ -194,7 +186,7 @@ const CTASection = () => {
             </a>
 
             <a
-              href="https://t.me/ideasjam2025"
+              href="https://t.me/ideasjam2026"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-cream/80 hover:text-accent transition-colors"
