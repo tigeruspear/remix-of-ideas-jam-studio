@@ -13,7 +13,7 @@ const workshops = [
     number: "01",
     title: "Lean Start-up Concept Workshop",
     description: "Learn the fundamentals of building a successful start-up with minimal resources",
-    date: "15 Feb 2026",
+    date: "7 Mar 2026",
     time: "9:00 AM - 11:00 AM",
     location: "NTU LT1A",
     image: "/images/workshop1.jpg", // 请替换为你实际的图片路径
@@ -23,7 +23,7 @@ const workshops = [
     number: "02",
     title: "Lean Canvas Workshop",
     description: "Master the art of creating effective business model canvases",
-    date: "15 Feb 2026",
+    date: "7 Mar 2026",
     time: "11:30 AM - 1:30 PM",
     location: "NTU LT1A",
     image: "/images/workshop2.jpg",
@@ -33,7 +33,7 @@ const workshops = [
     number: "03",
     title: "Pitching Workshop",
     description: "Develop compelling presentations that win over investors and judges",
-    date: "15 Feb 2026",
+    date: "7 Mar 2026",
     time: "2:30 PM - 4:30 PM",
     location: "NTU LT1A",
     image: "/images/workshop3.jpg",
@@ -61,7 +61,7 @@ const WorkshopsSection = () => {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <div className="flex items-center gap-2 bg-white px-5 py-2 rounded-xl shadow-sm border border-white">
               <Calendar className="w-4 h-4 text-orange-500" />
-              <span className="text-sm font-semibold text-gray-700">15 February 2026</span>
+              <span className="text-sm font-semibold text-gray-700">7 March 2026</span>
             </div>
             <button
               onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=NTU+LT1A', '_blank')}

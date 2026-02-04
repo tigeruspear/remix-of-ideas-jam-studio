@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { Users, X, Linkedin, Mail } from "lucide-react";
+import { Users, X } from "lucide-react";
 
 const mentors = [
   {
@@ -94,7 +94,6 @@ const mentors = [
 
 const MentorsSection = () => {
   const [selectedMentor, setSelectedMentor] = useState(null);
-  const [showContact, setShowContact] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const gridRef = useRef<HTMLDivElement | null>(null);
 
@@ -125,12 +124,10 @@ const MentorsSection = () => {
 
   const handleOpenPopup = (mentor) => {
     setSelectedMentor(mentor);
-    setShowContact(false); // Reset contact view when opening new mentor
   };
 
   const handleClosePopup = () => {
     setSelectedMentor(null);
-    setShowContact(false);
   };
 
   return (
@@ -267,41 +264,7 @@ const MentorsSection = () => {
                         {selectedMentor.description}
                     </div>
                     
-                    {/* Action Buttons */}
-                    <div className="flex flex-col items-center gap-4">
-                        <div className="flex justify-center gap-4">
-                            <button 
-                                onClick={() => setShowContact(!showContact)}
-                                className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all text-sm ${showContact ? 'bg-foreground text-background shadow-lg ring-2 ring-offset-2 ring-foreground' : 'bg-foreground text-background hover:opacity-90'}`}
-                            >
-                                <Mail className="w-4 h-4" />
-                                {showContact ? 'Hide Email' : 'Show Email'}
-                            </button>
-                            <button className="flex items-center gap-2 px-5 py-2.5 border border-border rounded-full font-medium hover:bg-accent/5 transition-colors text-sm">
-                                <Linkedin className="w-4 h-4" />
-                                Profile
-                            </button>
-                        </div>
 
-                        {/* Collapsible Contact Section */}
-                        {showContact && (
-                            <div className="w-full mt-4 p-4 bg-accent/5 rounded-xl border border-border/50 animate-in slide-in-from-top-2 fade-in duration-200">
-                                <h4 className="text-sm font-semibold text-foreground mb-3 text-left">Contact Details</h4>
-                                <div className="space-y-3">
-                                    {selectedMentor.email && (
-                                        <div className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                                            <div className="w-8 h-8 rounded-full bg-background flex items-center justify-center border border-border">
-                                                <Mail className="w-4 h-4 text-accent" />
-                                            </div>
-                                            <a href={`mailto:${selectedMentor.email}`} className="hover:underline">
-                                                {selectedMentor.email}
-                                            </a>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        )}
-                    </div>
 
                 </div>
             </div>

@@ -79,7 +79,10 @@ const Footer = () => {
           </div>
         </div>
           <div className="pt-4 border-t border-cream/10">
-            <p className="text-xs text-cream/40">
+            <p className="text-xs text-cream/30">
+              Icons by <a href="https://lucide.dev" target="_blank" rel="noopener noreferrer" className="hover:text-cream/50 transition-colors">Lucide</a>
+            </p>
+            <p className="text-xs text-cream/40 mt-2">
               © 2026 IdeasJam NTU. All rights reserved.
             </p>
           </div>
