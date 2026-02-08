@@ -38,7 +38,7 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-3">
             <Button variant="hero" size="lg" asChild>
-              <a href="https://tinyurl.com/IdeasJam2025SignUp" target="_blank" rel="noopener noreferrer">
+              <a href="https://tinyurl.com/Joinideasjam2026" target="_blank" rel="noopener noreferrer">
                 Register Now
               </a>
             </Button>
