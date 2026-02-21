@@ -11,7 +11,7 @@ import {
 const workshops = [
   {
     number: "01",
-    title: "Lean Start-up Concept Workshop",
+    title: "Business Model Workshop",
     description: "Learn the fundamentals of building a successful start-up with minimal resources",
     date: "7 Mar 2026",
     time: "10:40 AM - 12:10 PM",
