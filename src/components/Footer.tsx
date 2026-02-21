@@ -23,7 +23,7 @@ const Footer = () => {
                 <img
                   src="/images/garagelogo.svg"
                   alt="Garage at EEE logo"
-                  className="h-20 w-auto"
+                  className="h-20 w-auto sm:h-16 md:h-20"
                 />
               </div>
               <p className="text-sm text-cream/80 mb-4">

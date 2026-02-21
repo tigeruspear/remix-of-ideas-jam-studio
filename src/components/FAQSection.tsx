@@ -72,17 +72,7 @@ export default function FAQSection() {
               committee.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <div
-                className="rounded-xl border bg-white/60 px-4 py-3 text-sm"
-                style={{ borderColor: `${THEME}22` }}
-              >
-                <span className="font-medium" style={{ color: THEME }}>
-                  Tip:
-                </span>{" "}
-                Click a question to expand.
-              </div>
-            </div>
+           
           </div>
 
           {/* Right: Accordion cards */}

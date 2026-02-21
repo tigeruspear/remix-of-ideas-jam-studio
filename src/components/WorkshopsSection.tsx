@@ -14,30 +14,21 @@ const workshops = [
     title: "Lean Start-up Concept Workshop",
     description: "Learn the fundamentals of building a successful start-up with minimal resources",
     date: "7 Mar 2026",
-    time: "9:00 AM - 11:00 AM",
+    time: "10:40 AM - 12:10 PM",
     location: "NTU LT1A",
-    image: "/images/workshop1.jpg", // 请替换为你实际的图片路径
-    fullDescription: "This workshop covers the core principles of the lean start-up methodology, including validated learning, build-measure-learn feedback loops, and minimum viable products (MVPs).",
+    image: "/images/workshop1.jpg", 
+    fullDescription: "Plan on scaling your startup idea? This workshop will help participants to develop and refine their business models, focusing on how to start from scratch and scale effectively. Learn to identify key customers, create strong value propositions, and build sustainable, scalable plans for growth.",
   },
+ 
   {
     number: "02",
-    title: "Lean Canvas Workshop",
-    description: "Master the art of creating effective business model canvases",
+    title: "Pitching Workshop",
+    description: "Develop pithcing skills that will win over investors and judges",
     date: "7 Mar 2026",
-    time: "11:30 AM - 1:30 PM",
+    time: "1:10 PM - 2:40 PM",
     location: "NTU LT1A",
     image: "/images/workshop2.jpg",
-    fullDescription: "Dive deep into the Lean Canvas framework, a one-page business plan template that helps you deconstruct your idea into key assumptions.",
-  },
-  {
-    number: "03",
-    title: "Pitching Workshop",
-    description: "Develop compelling presentations that win over investors and judges",
-    date: "7 Mar 2026",
-    time: "2:30 PM - 4:30 PM",
-    location: "NTU LT1A",
-    image: "/images/workshop3.jpg",
-    fullDescription: "Master the art of pitching your startup idea. This workshop covers storytelling techniques and slide design best practices.",
+    fullDescription: "Master the art of pitching your startup idea. This workship is designed to help participants clearly articulate their ideas, value propositions, and business potential in a compelling and structured manner.",
   },
 ];
 
