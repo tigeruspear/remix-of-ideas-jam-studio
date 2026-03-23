@@ -1,101 +1,53 @@
-import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { Users, X } from "lucide-react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { ChevronLeft, ChevronRight, Users, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { mentors } from "@/components/FullMentorsSection";
 
-const mentors = [
-  {
-    name: "Mr. Aditya Kumar",
-    title: "Director, Schneider Electric",
-    description: "Aditya has 25+ years of experience delivering complex electrical and automation projects across industries like datacenters, power systems, and commercial buildings. A certified coach with nearly a decade of mentoring experience, he is passionate about sustainability, green initiatives, and people development. He currently serves as East Asia Transportation Segment Director and Sales Excellence Lead for the Power Systems Division at Schneider Electric.",
-    initials: "AK",
-    bgColor: "bg-coral/20",
-    email: "aditya.kumar@se.com",
-    image: "/images/mr-aditya-kumar.png",
-    imagePosition: "center top",
-    imageZoom: 1.0,
-  },
-  {
-    name: "Ms. Clara Kwan",
-    title: "Chief Sustainability Officer",
-    description: "Clara Kwan, Chief Sustainability Officer at the Singapore Manufacturing Federation, leads innovative strategies to guide companies toward sustainable practices. She integrates ESG principles across operations and advises on sustainability, investments, and social impact, driving strategic decision-making and portfolio management.",
-    initials: "CK",
-    bgColor: "bg-yellow/20",
-    email: "ckyl@mail.com",
-    image: "/images/ms-clara-kwan.png",
-    imagePosition: "center top",
-    imageZoom: 1.1,
-  },
-  {
-    name: "Mr. Jason Lee Ho Fan",
-    title: "Founder & CEO, Scent by SIX",
-    description: "Meet Mr. Jason, the founder and CEO of Scent by SIX, a visionary entrepreneur and now a dedicated law student. Mr. Jason has a passion for creating fragrances that evoke emotion. He has collaborated with iconic brands like Singapore Airlines and Eu Yan Sang. His achievements include being honored with the prestigious Entrepreneur of the Year Award in 2022.",
-    initials: "JL",
-    bgColor: "bg-teal-light",
-    email: "jason.lee@scentbysix.com",
-    image: "/images/mr-jason-lee-ho-fan.png",
-    imagePosition: "center top",
-    imageZoom: 1.1,
-  },
-  {
-    name: "Mr. Lionel Chok",
-    title: "XR & Spatial Computing Specialist",
-    description: "A specialist in Extended Reality and Spatial Computing, Mr. Lionel got invited to mentor and advise entrepreneurs when his own XR start-up iMMERSiVELY was acquired during COVID-19 to embark on the Web3 journey. Today, aside from presenting at conferences and adjunct lecturing at SMU, he consults clients on immersive content strategy and innovation.",
-    initials: "LC",
-    bgColor: "bg-sky-light",
-    email: "lionel@immersively.co",
-    image: "/images/mr-lional-chok.png",
-    imagePosition: "center top",
-    imageZoom: 1.0,
-  },
-  {
-    name: "Ms. Maggie Yeo Sock Koon",
-    title: "Experienced CFO",
-    description: "Ms. Yeo Sock Koon is an experienced CFO with 30+ years in SGX-listed companies across shipping, manufacturing, oil & gas, real estate, resources, and hospitality. Led $500M+ revenue and teams of 70+, driving financial system implementation, shared service setup, and post-merger integration. A strategic leader and negotiator delivering impactful business results.",
-    initials: "MY",
-    bgColor: "bg-purple/20",
-    email: "maggie.yeo@gmail.com",
-    image: "/images/ms-maggie-yeo-sock-koon.png",
-    imagePosition: "center top",
-    imageZoom: 1.0,
-  },
-  {
-    name: "Mr. Nicola Scarpelli",
-    title: "Nuclear Engineer & Coach",
-    description: "With a background in nuclear engineering and a passion for sustainability, he has spent over a decade in the corporate and energy sectors, excelling in sales performance, software innovation, business transformation, and change management. He advocates for nuclear energy and the circular economy, ventures into startups, and actively mentors, coaches, speaks publicly, and engages in pro-bono activities.",
-    initials: "NS",
-    bgColor: "bg-pink/20",
-    email: "scarpelli.na@gmail.com",
-    image: "/images/mr-nicola-scarpelli.png",
-    imagePosition: "center bottom",
-    imageZoom: 1.4,
-  },
-  {
-    name: "Mr. Pranav Krishna",
-    title: "Entrepreneur & Innovator",
-    description: "An entrepreneur and innovator, he describes himself as a lazy person, which drives his pursuit of efficiency without compromising on quality in his work. He is deeply passionate about the planet, its people, and finding ways to restore balance to the global challenges humanity faces. Open to challenges and new perspectives, he welcomes meaningful discussions on a wide range of topics.",
-    initials: "PK",
-    bgColor: "bg-coral/20",
-    email: "pranav05@live.com",
-    image: "/images/mr-pranav-krishna.png",
-    imagePosition: "center top",
-    imageZoom: 1.6,
-  },
-  {
-    name: "Mr. Vineet Agarwal",
-    title: "CEO of Validus Capital",
-    description: "Vineet Agarwal is the CEO of Validus Capital, leading SME lending expansion in Singapore with tailored financing solutions. Previously, he drove Data & AI initiatives at DBS Bank's Consumer Banking division and spent a decade at American Express, holding various positions in the payments sector. Vineet focuses on fostering sustainable growth and supporting local businesses.",
-    initials: "VA",
-    bgColor: "bg-sky-light",
-    email: "vineet101@gmail.com",
-    image: "/images/mr-vineet-agarwal.png",
-    imagePosition: "center top",
-    imageZoom: 1.1,
-  },
-];
+const getTitleParts = (title: string) => {
+  const separatorIndex = title.indexOf(",");
+
+  if (separatorIndex === -1) {
+    return { role: title, company: "" };
+  }
+
+  return {
+    role: title.slice(0, separatorIndex).trim(),
+    company: title.slice(separatorIndex + 1).trim(),
+  };
+};
+
+const getCompanyFromTitle = (title: string) => getTitleParts(title).company || "Independent";
 
 const MentorsSection = () => {
   const [selectedMentor, setSelectedMentor] = useState(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const gridRef = useRef<HTMLDivElement | null>(null);
+  const isHoveringRef = useRef(false);
+  const isDraggingRef = useRef(false);
+  const hasDraggedRef = useRef(false);
+  const dragStartXRef = useRef(0);
+  const dragStartScrollLeftRef = useRef(0);
+
+  const groupedMentors = useMemo(() => {
+    return [...mentors].sort((a, b) => {
+      const companyCompare = getCompanyFromTitle(a.title).localeCompare(getCompanyFromTitle(b.title));
+      if (companyCompare !== 0) {
+        return companyCompare;
+      }
+
+      const roleCompare = getTitleParts(a.title).role.localeCompare(getTitleParts(b.title).role);
+      if (roleCompare !== 0) {
+        return roleCompare;
+      }
+
+      return a.name.localeCompare(b.name);
+    });
+  }, []);
+
+  const loopedMentors = useMemo(
+    () => [...groupedMentors, ...groupedMentors, ...groupedMentors],
+    [groupedMentors]
+  );
 
   useEffect(() => {
     const target = gridRef.current;
@@ -117,6 +69,54 @@ const MentorsSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const target = gridRef.current;
+    if (!target || groupedMentors.length === 0) {
+      return;
+    }
+
+    const setupInitialPosition = () => {
+      const blockWidth = target.scrollWidth / 3;
+      target.scrollLeft = blockWidth;
+    };
+
+    setupInitialPosition();
+
+    const handleLooping = () => {
+      const blockWidth = target.scrollWidth / 3;
+      if (blockWidth <= 0) {
+        return;
+      }
+
+      if (target.scrollLeft <= blockWidth * 0.25) {
+        target.scrollLeft += blockWidth;
+      } else if (target.scrollLeft >= blockWidth * 1.75) {
+        target.scrollLeft -= blockWidth;
+      }
+    };
+
+    target.addEventListener("scroll", handleLooping, { passive: true });
+    return () => target.removeEventListener("scroll", handleLooping);
+  }, [groupedMentors.length]);
+
+  useEffect(() => {
+    const target = gridRef.current;
+    if (!target) {
+      return;
+    }
+
+    let animationFrameId = 0;
+    const autoScroll = () => {
+      if (!isHoveringRef.current && !isDraggingRef.current) {
+        target.scrollLeft += 0.45;
+      }
+      animationFrameId = window.requestAnimationFrame(autoScroll);
+    };
+
+    animationFrameId = window.requestAnimationFrame(autoScroll);
+    return () => window.cancelAnimationFrame(animationFrameId);
+  }, []);
+
   const getCardStyle = (index: number): CSSProperties =>
     ({
       "--mentor-delay": `${index * 90}ms`,
@@ -128,6 +128,67 @@ const MentorsSection = () => {
 
   const handleClosePopup = () => {
     setSelectedMentor(null);
+  };
+
+  const scrollMentors = (direction: "left" | "right") => {
+    if (!gridRef.current) {
+      return;
+    }
+
+    const amount = Math.max(gridRef.current.clientWidth * 0.85, 280);
+    gridRef.current.scrollBy({
+      left: direction === "right" ? amount : -amount,
+      behavior: "smooth",
+    });
+  };
+
+  const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!gridRef.current) {
+      return;
+    }
+
+    isDraggingRef.current = true;
+    hasDraggedRef.current = false;
+    dragStartXRef.current = event.clientX;
+    dragStartScrollLeftRef.current = gridRef.current.scrollLeft;
+    gridRef.current.style.cursor = "grabbing";
+  };
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!gridRef.current || !isDraggingRef.current) {
+      return;
+    }
+
+    const delta = event.clientX - dragStartXRef.current;
+    if (Math.abs(delta) > 6) {
+      hasDraggedRef.current = true;
+    }
+    gridRef.current.scrollLeft = dragStartScrollLeftRef.current - delta;
+  };
+
+  const stopDragging = () => {
+    if (!gridRef.current) {
+      return;
+    }
+
+    isDraggingRef.current = false;
+    gridRef.current.style.cursor = "grab";
+  };
+
+  const handleWheelScroll = (event: React.WheelEvent<HTMLDivElement>) => {
+    if (!gridRef.current) {
+      return;
+    }
+
+    if (Math.abs(event.deltaY) < Math.abs(event.deltaX)) {
+      return;
+    }
+
+    event.preventDefault();
+    gridRef.current.scrollBy({
+      left: event.deltaY,
+      behavior: "auto",
+    });
   };
 
   return (
@@ -147,47 +208,88 @@ const MentorsSection = () => {
         </div>
 
         <style>{`
+          .mentor-scroll {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+
+          .mentor-scroll::-webkit-scrollbar {
+            display: none;
+          }
+
           .mentor-card {
             opacity: 0;
           }
 
           .mentor-card.is-visible {
-            animation: mentor-slide-in 700ms ease forwards;
+            animation: mentor-slide-in 650ms ease forwards;
             animation-delay: var(--mentor-delay, 0ms);
           }
 
           @keyframes mentor-slide-in {
             from {
               opacity: 0;
-              transform: translateX(var(--mentor-offset, 0));
+              transform: translateY(12px);
             }
             to {
               opacity: 1;
-              transform: translateX(0);
-            }
-          }
-
-          @media (min-width: 1024px) {
-            .mentor-card {
-              --mentor-offset: -40px;
-            }
-
-            .mentor-card:nth-child(n + 5) {
-              --mentor-offset: 40px;
+              transform: translateY(0);
             }
           }
         `}</style>
 
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {mentors.map((mentor, index) => (
+        <div className="relative max-w-7xl mx-auto">
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-background to-transparent z-10" />
+
+          <button
+            type="button"
+            onClick={() => scrollMentors("left")}
+            aria-label="Scroll mentors left"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full border border-border/60 bg-background/90 backdrop-blur-sm text-foreground hover:bg-background transition-colors hidden md:flex items-center justify-center"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => scrollMentors("right")}
+            aria-label="Scroll mentors right"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full border border-border/60 bg-background/90 backdrop-blur-sm text-foreground hover:bg-background transition-colors hidden md:flex items-center justify-center"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+
+          <div
+            ref={gridRef}
+            onWheel={handleWheelScroll}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={stopDragging}
+            onMouseLeave={() => {
+              stopDragging();
+              isHoveringRef.current = false;
+            }}
+            onMouseEnter={() => {
+              isHoveringRef.current = true;
+            }}
+            className="mentor-scroll flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory px-3 py-5 cursor-grab select-none"
+          >
+          {loopedMentors.map((mentor, index) => (
             <div
-              key={mentor.name}
-              onClick={() => handleOpenPopup(mentor)}
+              key={`${mentor.name}-${index}`}
+              onClick={() => {
+                if (hasDraggedRef.current) {
+                  hasDraggedRef.current = false;
+                  return;
+                }
+                handleOpenPopup(mentor);
+              }}
               style={getCardStyle(index)}
-              className={`mentor-card group bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 border border-border/50 cursor-pointer flex flex-col items-center justify-center min-h-[200px] ${hasAnimated ? "is-visible" : ""}`}
+              className={`mentor-card snap-start shrink-0 basis-[82%] sm:basis-[47%] lg:basis-[23%] group bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 border border-border/50 cursor-pointer flex flex-col items-center justify-center min-h-[220px] ${hasAnimated ? "is-visible" : ""}`}
             >
               {/* Avatar */}
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-3 group-hover:scale-110 transition-transform duration-300">
                 <img
                   src={mentor.image}
                   alt={mentor.name}
@@ -199,21 +301,27 @@ const MentorsSection = () => {
                 />
               </div>
               
-              <h3 className="font-display font-bold text-base text-card-foreground text-center mb-1">
+              <h3 className="font-display font-bold text-base text-card-foreground text-center mb-0">
                 {mentor.name}
               </h3>
-              
-              <p className="text-xs text-accent font-medium text-center">
-                {mentor.title}
-              </p>
+
+              <div className="min-h-[2.9rem] flex items-center justify-center mt-0">
+                <div className="text-center leading-tight">
+                  <p className="text-xs text-accent font-medium">{getTitleParts(mentor.title).role}</p>
+                  {getTitleParts(mentor.title).company && (
+                    <p className="text-[11px] text-muted-foreground mt-1">{getTitleParts(mentor.title).company}</p>
+                  )}
+                </div>
+              </div>
             </div>
           ))}
+          </div>
         </div>
 
         <div className="text-center mt-10">
-          <p className="text-muted-foreground">
-            and many more industry experts joining us as mentors...
-          </p>
+          <Button variant="hero" size="lg" asChild>
+            <a href="/mentors">Check out all the industry experts joining us!</a>
+          </Button>
         </div>
       </div>
 

@@ -5,10 +5,12 @@ import IdeasJamLogo from "@/assets/Ideasjamlogo.svg";
 
 
 const navItems = [
-  { label: "Home", href: "#" },
-  { label: "Timeline", href: "#timeline" },
-  { label: "About", href: "#about" },
-  { label: "FAQs", href: "#faqs" },
+  { label: "Home", href: "/" },
+  { label: "Timeline", href: "/#timeline" },
+  { label: "About", href: "/#about" },
+  { label: "Mentors", href: "/mentors" },
+  { label: "Judges", href: "/judges" },
+  { label: "FAQs", href: "/faq" },
 ];
 
 const Navbar = () => {
@@ -18,7 +20,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-cream-light/95 backdrop-blur-md border-b border-cream-dark/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <img src={IdeasJamLogo} className="h-16 md:h-20 w-auto" alt="Ideas Jam Logo" />
 
           </a>
@@ -38,8 +40,8 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-3">
             <Button variant="hero" size="lg" asChild>
-              <a href="https://tinyurl.com/Joinideasjam2026" target="_blank" rel="noopener noreferrer">
-                Register Now
+              <a href="https://www.instagram.com/ideasjam_ntu/" target="_blank" rel="noopener noreferrer">
+                Follow Us
               </a>
             </Button>
           </div>
@@ -69,8 +71,8 @@ const Navbar = () => {
               ))}
               <div className="pt-4 px-4">
                 <Button variant="hero" className="w-full" asChild>
-                  <a href="https://tinyurl.com/IdeasJam2025SignUp" target="_blank" rel="noopener noreferrer">
-                    Register Now
+                  <a href="https://www.instagram.com/ideasjam_ntu/" target="_blank" rel="noopener noreferrer">
+                    Follow Us
                   </a>
                 </Button>
               </div>

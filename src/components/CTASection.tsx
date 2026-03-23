@@ -158,15 +158,15 @@ const CTASection = () => {
           {/* BIG Countdown (above buttons) */}
           <CountdownToDeadlineHero deadline={REG_DEADLINE} />
 
-          {/* Buttons BELOW countdown: Register Now (left) + Participant Deck (right) */}
+          {/* Buttons BELOW countdown: Follow Us (left) + Participant Deck (right) */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button variant="hero" size="xl" asChild>
               <a
-                href="https://tinyurl.com/JoinIdeasjam2026"
+                href="https://www.instagram.com/ideasjam_ntu/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Register Now <ArrowRight className="ml-2 w-5 h-5" />
+                Follow Us <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </Button>
 

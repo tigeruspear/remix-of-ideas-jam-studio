@@ -1,4 +1,4 @@
-import { ArrowRight, Instagram, Send } from "lucide-react";
+import { Instagram, Send } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
@@ -105,10 +105,12 @@ const HeroSection = () => {
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-slide-up" style={{ animationDelay: "0.85s" }}>
-              <Button variant="hero" size="xl" asChild>
-                <a href="https://tinyurl.com/JoinIdeasjam2026" target="_blank" rel="noopener noreferrer">
-                  Register Now <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
+              <Button
+                size="xl"
+                disabled
+                className="bg-slate-400 text-white shadow-none hover:bg-slate-400 cursor-not-allowed"
+              >
+                Registrations Closed
               </Button>
          
             </div>

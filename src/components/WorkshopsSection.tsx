@@ -62,6 +62,15 @@ const WorkshopsSection = () => {
               <span className="text-sm font-semibold text-gray-700 hover:text-orange-700">NTU LT1A</span>
             </button>
           </div>
+
+          <a
+            href="https://www.instagram.com/p/DV5Pn9zgenV/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-[#0f172a] text-white px-6 py-3 rounded-xl font-semibold tracking-wide hover:bg-[#1e293b] transition-colors"
+          >
+            Check Out Our Recap Video
+          </a>
         </div>
 
         {/* List Section - Adjusted for new design */}
