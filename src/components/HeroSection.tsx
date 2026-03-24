@@ -1,7 +1,7 @@
 import { Instagram, Send } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/IdeasJam2025Group.png";
 import ideasjamPattern from "@/assets/IdeasjamPattern.svg";
 
 const HeroSection = () => {

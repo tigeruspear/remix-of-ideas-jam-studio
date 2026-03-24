@@ -12,6 +12,7 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import VideoSection from "@/components/video";
 import FAQSection from "@/components/FAQSection";
+import InstagramSection from "@/components/InstagramSection";
 
 const Index = () => {
   const RevealOnScroll = ({ children }: { children: React.ReactNode }) => {
@@ -70,13 +71,12 @@ const Index = () => {
         <SponsorsSection />
       <RevealOnScroll>
         <WorkshopsSection />
-        
       </RevealOnScroll>
-        <FAQSection/>
       <RevealOnScroll>
         <CTASection />
       </RevealOnScroll>
       <VideoSection />
+      <InstagramSection />
       <Footer />
     </main>
   );

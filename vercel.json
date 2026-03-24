@@ -1,7 +1,32 @@
 {
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-1",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
-      "source": "/((?!.*\\.).*)",
+      "source": "/faq",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/mentors",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/judges",
       "destination": "/index.html"
     }
   ]

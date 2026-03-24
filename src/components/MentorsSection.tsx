@@ -20,6 +20,8 @@ const getCompanyFromTitle = (title: string) => getTitleParts(title).company || "
 
 const MentorsSection = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [shouldPreloadImages, setShouldPreloadImages] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const gridRef = useRef<HTMLDivElement | null>(null);
 
   const groupedMentors = useMemo(() => {
@@ -43,6 +45,9 @@ const MentorsSection = () => {
     [groupedMentors]
   );
 
+  const middleBlockStart = groupedMentors.length;
+  const middleBlockEnd = groupedMentors.length * 2;
+
   useEffect(() => {
     const target = gridRef.current;
     if (!target) {
@@ -62,6 +67,42 @@ const MentorsSection = () => {
     observer.observe(target);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const target = sectionRef.current;
+    if (!target) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldPreloadImages(true);
+          observer.disconnect();
+        }
+      },
+      {
+        // Start loading images before the section is visible to avoid blank avatars on scroll.
+        rootMargin: "700px 0px",
+        threshold: 0,
+      }
+    );
+
+    observer.observe(target);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!shouldPreloadImages) {
+      return;
+    }
+
+    groupedMentors.forEach((mentor) => {
+      const image = new Image();
+      image.src = mentor.image;
+    });
+  }, [groupedMentors, shouldPreloadImages]);
 
   useEffect(() => {
     const target = gridRef.current;
@@ -122,7 +163,11 @@ const MentorsSection = () => {
     } as CSSProperties);
 
   return (
-    <section id="mentors" className="py-20 md:py-28 bg-background relative overflow-hidden">
+    <section
+      id="mentors"
+      ref={sectionRef}
+      className="py-20 md:py-28 bg-background relative overflow-hidden"
+    >
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-2 bg-teal-light text-teal text-sm font-semibold rounded-full mb-4">
@@ -176,7 +221,11 @@ const MentorsSection = () => {
             ref={gridRef}
             className="mentor-scroll flex gap-6 overflow-x-auto px-3 py-5 select-none"
           >
-          {loopedMentors.map((mentor, index) => (
+          {loopedMentors.map((mentor, index) => {
+            const shouldPrioritizeImage =
+              index >= middleBlockStart - 2 && index < middleBlockEnd + 2;
+
+            return (
             <div
               key={`${mentor.name}-${index}`}
               style={getCardStyle(index)}
@@ -187,6 +236,9 @@ const MentorsSection = () => {
                 <img
                   src={mentor.image}
                   alt={mentor.name}
+                  loading={shouldPreloadImages || shouldPrioritizeImage ? "eager" : "lazy"}
+                  decoding="async"
+                  fetchPriority={shouldPreloadImages || shouldPrioritizeImage ? "high" : "low"}
                   className="w-full h-full object-cover"
                   style={{ 
                     objectPosition: mentor.imagePosition,
@@ -208,7 +260,8 @@ const MentorsSection = () => {
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
           </div>
         </div>
 

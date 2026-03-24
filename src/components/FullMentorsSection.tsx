@@ -512,6 +512,9 @@ const FullMentorsSection = () => {
                 <img
                   src={mentor.image}
                   alt={mentor.name}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                   className="w-full h-full object-cover"
                   style={{ 
                     objectPosition: mentor.imagePosition,
@@ -588,6 +591,9 @@ const FullMentorsSection = () => {
                         <img
                           src={selectedMentor.image}
                           alt={selectedMentor.name}
+                          loading="eager"
+                          decoding="async"
+                          fetchPriority="high"
                           className="w-full h-full object-cover"
                           style={{ 
                             objectPosition: selectedMentor.imagePosition,

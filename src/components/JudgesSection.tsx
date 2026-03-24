@@ -196,7 +196,7 @@ const JudgesSection = () => {
       <div
         className="relative w-full min-h-[calc(100svh-4rem)] md:min-h-[calc(100svh-5rem)] overflow-hidden bg-scroll md:bg-fixed"
         style={{
-          backgroundImage: "url('/images/Judges/judgehero.jpg')",
+          backgroundImage: "url('/images/Judges/judgehero1.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
