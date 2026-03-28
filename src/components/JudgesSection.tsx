@@ -175,7 +175,7 @@ const judges: Judge[] = [
     themes: ["Energy"],
   },
   {
-    name: "Dr. Claire Bi Qing Qing",
+    name: "Claire BI Qing Qing",
     title: "Senior Lecturer, NTU",
     description:
       "Dr. Claire Bi Qing Qing is a Senior Lecturer and Programme Director (Undergraduate Programme) at NTU Entrepreneurship Academy. She has extensive experience teaching entrepreneurship courses and mentoring student ventures. Dr. Bi is passionate about cultivating entrepreneurial mindsets and capabilities in young people and strengthening the innovation and entrepreneurship ecosystem by bridging classroom learning with industry practice. Her research focuses on entrepreneurial decision-making, and she has published in leading business journals. She is also an invited speaker at regional events and conferences and has served as a judge for various student pitch competitions.",
