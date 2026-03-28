@@ -174,14 +174,26 @@ const judges: Judge[] = [
     imageZoom: 1.0,
     themes: ["Energy"],
   },
+  {
+    name: "Dr. Claire Bi Qing Qing",
+    title: "Senior Lecturer, NTU",
+    description:
+      "Dr. Claire Bi Qing Qing is a Senior Lecturer and Programme Director (Undergraduate Programme) at NTU Entrepreneurship Academy. She has extensive experience teaching entrepreneurship courses and mentoring student ventures. Dr. Bi is passionate about cultivating entrepreneurial mindsets and capabilities in young people and strengthening the innovation and entrepreneurship ecosystem by bridging classroom learning with industry practice. Her research focuses on entrepreneurial decision-making, and she has published in leading business journals. She is also an invited speaker at regional events and conferences and has served as a judge for various student pitch competitions.",
+    initials: "CB",
+    bgColor: "bg-teal-light",
+    image: "/images/Judges/MsClaire.jpg",
+    imagePosition: "center top",
+    imageZoom: 1.0,
+    themes: ["Education"],
+  },
 ];
 
 const JudgesSection = () => {
   const [selectedJudge, setSelectedJudge] = useState<Judge | null>(null);
   const gridRef = useRef<HTMLDivElement | null>(null);
 
-  // Display judges in CSV order (no sorting)
-  const filteredJudges = judges;
+  // Display judges in CSV order (no sorting), excluding hidden profiles.
+  const filteredJudges = judges.filter((judge) => judge.name !== "Darryl Chan");
 
   const handleOpenPopup = (judge: Judge) => {
     setSelectedJudge(judge);
